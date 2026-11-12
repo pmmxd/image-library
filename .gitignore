@@ -1,0 +1,32 @@
+# Private runtime data
+data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.log
+图片浏览.html
+图片元数据.json
+图片元数据.csv
+相册.json
+缩略图/
+地图缓存/
+
+# Local tooling
+.codegraph/
+.localdock*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
