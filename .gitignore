@@ -1,4 +1,5 @@
 # Private runtime data
+.media-library/
 data/
 *.db
 *.db-wal

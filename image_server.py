@@ -34,11 +34,14 @@ from albums_db import load_albums as load_albums_db, save_albums as save_albums_
 
 PROJECT_DIR_NAME = ".media-library"
 APP_DIR = Path(__file__).resolve().parent
-if APP_DIR.parent.name == PROJECT_DIR_NAME:
+if os.environ.get("MEDIA_LIBRARY_ROOT"):
+    ROOT = Path(os.environ["MEDIA_LIBRARY_ROOT"]).resolve()
+    PROJECT_DIR = ROOT / PROJECT_DIR_NAME
+elif APP_DIR.parent.name == PROJECT_DIR_NAME:
     PROJECT_DIR = APP_DIR.parent
     ROOT = PROJECT_DIR.parent
 else:
-    ROOT = Path(os.environ.get("MEDIA_LIBRARY_ROOT", os.getcwd())).resolve()
+    ROOT = Path(os.getcwd()).resolve()
     PROJECT_DIR = ROOT / PROJECT_DIR_NAME
 OUT = PROJECT_DIR / "data"
 DB_PATH = OUT / "图片索引.db"
